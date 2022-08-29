@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- -------------------------------------------------------Nav Bar------------------------------------------------------------- -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="Assets/Logo.png" alt="logo" width="30" height="24" class="d-inline-block align-text-top">
+                Dave's Website</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" 
+              aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#Signup-form">Sign Up</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#login-form">Log In</a>
+                      </li> 
+                </ul>
+              </div>
+            </div>
+          </nav> 
+          <!-- -------------------------------------------------Header Image--------------------------------------------------------- -->
+          <div class="jumbotron">
+            <h1 class="display-2">Dave's Website</h1>
+            <p class="lead">This is a website for all your tour needs. Pick up any destination and we will arrange that for you!</p>
+            <hr class="my-4">             
+            <p class="lead">
+              <a class="btn btn-dark btn-lg" href="#" role="button">Explore More</a>
+            </p>
+          </div>
+          
+        <!-- -----------------------------------------------------Sign Up ---------------------------------------------------- -->
+        <div class="container">
+        <form class="row g-3 registration-form" id="Signup-form">
+            <h1 class="col-md-12 display-4 sign-up-title">Sign Up</h1>
+            <div class="alert alert-success alert-dismissible fade show signup-alert col-md-8" role="alert" id="signup-alert-success">
+              Signed Up successfully!
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="alert alert-danger alert-dismissible fade show signup-alert col-md-8" role="alert" id="signup-alert-failure">
+              SignUp Unsuccessful!
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="col-md-6">
+            <label for="signup-firstname" class="form-label">First name</label>
+            <input type="text" class="form-control" id="signup-firstname" required autocomplete="off">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            </div>
+            <div class="col-md-6">
+            <label for="signup-lastname" class="form-label">Last name</label>
+            <input type="text" class="form-control" id="signup-lastname" required autocomplete="off">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            </div>
+            <div class="col-md-6">
+            <label for="signup-email" class="form-label"> Email</label>
+            <div class="input-group has-validation">
+                <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                </div>
+                <input type="text" class="form-control" id="signup-email" aria-describedby="inputGroupPrepend" required autocomplete="off">
+                <div class="invalid-feedback">
+                Please enter valid email.
+                </div>
+            </div>
+            </div>
+            <div class="col-md-6">
+                <label for="signup-phone" class="form-label"> Phone Number</label>
+                <div class="input-group has-validation">
+                    <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend">+91</span>
+                    </div>
+                    <input type="text" class="form-control" id="signup-phone" aria-describedby="inputGroupPrepend" required autocomplete="off">
+                    <div class="invalid-feedback">
+                    Please enter valid Phone Number
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+            <label for="signup-password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="signup-password" required autocomplete="off">
+            <div class="invalid-feedback">
+                Please provide a valid password.
+            </div>
+            </div>
+            <div class="col-md-6">
+                <label for="signup-confirmpassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="signup-confirmpassword" required autocomplete="off">
+                <div class="invalid-feedback">
+                    Password and Confirm Password should match.
+                </div>
+            </div>
+            <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                You must agree before submitting.
+                </div>
+            </div>
+            </div>
+            <div class="col-12 button-wrapper">
+            <button class="btn btn-dark" type="button" onclick="signup()">Sign Up</button>
+            </div>
+        </form>
+
+        <!-- -----------------------------------------------------Log in ----------------------------------------------------- -->
+        <form class="log-in-form" id="login-form">
+            <h1 class="display-4 log-in-title">Login</h1>
+            <div class="alert alert-success alert-dismissible fade show login-alert" role="alert" id="login-alert-success">
+              Access Granted!
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="alert alert-danger alert-dismissible fade show login-alert" role="alert" id="login-alert-failure">
+              Access Denied!
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="mb-3">
+              <label for="login-email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="login-password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="login-password">
+            </div>
+            <div class="button-wrapper">
+                <button type="button" class="btn btn-dark" onclick="login()">Log in</button>
+            </div>
+          </form>
+        </div>
+        <!-- ----------------------------------------------------Footer Image------------------------------------------------ -->
+        <img src="https://i.pinimg.com/736x/1c/e3/dc/1ce3dc9938260cd96d5f8feb73aa3c2f.jpg" alt="footer" width="100%">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" 
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" 
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="index.js"></script>
+</body>
+</html>
